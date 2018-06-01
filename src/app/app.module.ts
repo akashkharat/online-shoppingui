@@ -6,10 +6,14 @@ import {  HttpClientModule,HttpHeaders } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+import { ProductsComponent } from './products/products.component';
+import { CommonComponent } from './common/common.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ProductsComponent,
+    CommonComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,11 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
     {
      path : 'home',
      component: HomeComponent
-     }
+     },
+     {
+      path : 'products',
+      component: ProductsComponent
+      }
     ])
   ],
   providers: [RestService],

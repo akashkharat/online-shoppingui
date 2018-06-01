@@ -2,26 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { RestService } from '../service/rest.service';
 import { UtilityService } from '../service/utility.service';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-common',
+  templateUrl: './common.component.html',
+  styleUrls: ['./common.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class CommonComponent implements OnInit {
 
-  category:any
-  product:any
-
+  category :any;
   constructor(private _restService:RestService,
-  private _utilitySerive:UtilityService,
-private _route:Router) { }
+    private _utilitySerive:UtilityService,
+  private _route:Router) { 
+      this.getAllCategories();
+    }
 
   ngOnInit() {
-    this.getAllCategories();
-    this.getAllProducts();
+   
   }
-
   getAllCategories(){
     this._restService.getCategories()
     .subscribe(response=>{
@@ -31,22 +28,11 @@ private _route:Router) { }
     }
     )
   }
-  getAllProducts(){
-    this._restService.getAllProducts()
-    .subscribe(response=>{
-      this.product=response;
-    },erroResponse=>{
-      console.log("Error");
-    }
-    )
-
-  }
   public showProducts(id:any){
     this._utilitySerive.setCategoryId(id);
     this._route.navigate(["/products"]);
     
 
   }
-
 
 }
