@@ -1,4 +1,3 @@
-
 <app-common></app-common>
 <div class="jumbotron">
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -33,9 +32,24 @@
   <hr class="hr-text" data-content="Featured Products">
   
 </div>
-<div *ngIf="product" class="container">
+<!-- <div *ngIf="product" class="container">
 	<div class="container" *ngFor="let product of product">
 		{{product.code}}
 	</div>
-
+	</div> -->
+	<div *ngIf="product" class="container">
+		<div class="row">
+	<div class="col-sm-3" *ngFor="let product of product">
+	<app-product-list [imageUrl]="product.code"
+										[description]="product.description"
+										[unitPrice]="product.unitPrice"
+										[name]="product.name">
+									</app-product-list>
+		<script>
+			$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+		</script>
+</div>
+</div>
 </div>

@@ -27,4 +27,10 @@ export class RestService {
     let url=this.restUrl+"/products";
     return this._http.get(url,{headers:headers});
   }
+
+  public getProductByCategory(categoryId:any):Observable<any>{
+    let headers=this.getStandardHeaders();
+    let url=this.restUrl+"/products/"+categoryId;
+    return this._http.get(url,{headers:headers});
+  }
 }

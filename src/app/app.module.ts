@@ -8,12 +8,14 @@ import { RouterModule } from '@angular/router';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { ProductsComponent } from './products/products.component';
 import { CommonComponent } from './common/common.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductsComponent,
-    CommonComponent
+    CommonComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

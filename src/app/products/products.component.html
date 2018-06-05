@@ -1,1 +1,19 @@
 <app-common></app-common>
+
+
+<div *ngIf="products" class="container">
+		<div class="row">
+	<div class="col-sm-3" *ngFor="let product of products">
+	<app-product-list [imageUrl]="product.code"
+										[description]="product.description"
+										[unitPrice]="product.unitPrice"
+										[name]="product.name">
+									</app-product-list>
+		<script>
+			$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+		</script>
+</div>
+</div>
+</div>
